@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Fashion Wardrobe Game</title></head>
+<body>
+  <h2>Select your outfit for: {{ occasion }}</h2>
+  <form method="post">
+    <input type="hidden" name="occasion" value="{{ occasion }}">
+    {% for cat, items in wardrobe.items() %}
+      <label>{{ cat.capitalize() }}:</label>
+      <select name="{{ cat }}">
+        {% for item in items %}
+          <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+      </select><br>
+    {% endfor %}
+    <button type="submit">Submit Outfit</button>
+  </form>
+</body>
+</html>
