@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Result</title></head>
+<body>
+  <h2>Outfit for: {{ occasion }}</h2>
+  <ul>
+    {% for cat, item in choices.items() %}
+      <li>{{ cat.capitalize() }}: {{ item }}</li>
+    {% endfor %}
+  </ul>
+  <p>Score: {{ score }}/4</p>
+  <p>{{ feedback }}</p>
+  <a href="/">Play Again</a>
+</body>
+</html>
